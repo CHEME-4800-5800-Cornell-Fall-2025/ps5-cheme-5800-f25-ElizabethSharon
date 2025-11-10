@@ -5,8 +5,9 @@ const _PATH_TO_SRC = joinpath(_ROOT, "src");
 # check: do we need to download any packages?
 using Pkg
 if (isfile(joinpath(_ROOT, "Manifest.toml")) == false) # have manifest file, we are good. Otherwise, we need to instantiate the environment
-    Pkg.add(path="https://github.com/varnerlab/VLDataScienceMachineLearningPackage.jl.git")
-    Pkg.activate("."); Pkg.resolve(); Pkg.instantiate(); Pkg.update();
+    Pkg.activate(".")
+    Pkg.add(url="https://github.com/varnerlab/VLDataScienceMachineLearningPackage.jl.git")
+    Pkg.resolve(); Pkg.instantiate(); Pkg.update();
 end
 
 # load the required packages -
